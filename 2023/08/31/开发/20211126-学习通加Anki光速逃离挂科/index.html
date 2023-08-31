@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>小苹果牛角包</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="https://cravatar.cn/avatar/c7fd185f8c967dec20c29c75a40b9e09?s=64" type="image/png" />
+    <meta name="description" content="为了防止挂科，写了个脚本，可以将你的超星学习通里的作业数据、随堂练习导出成为 Csv 文件，方便导入 Anki 不停的复习错题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小苹果牛角包">
+<meta property="og:url" content="http://example.com/2023/08/31/%E5%BC%80%E5%8F%91/20211126-%E5%AD%A6%E4%B9%A0%E9%80%9A%E5%8A%A0Anki%E5%85%89%E9%80%9F%E9%80%83%E7%A6%BB%E6%8C%82%E7%A7%91/index.html">
+<meta property="og:site_name" content="小苹果牛角包">
+<meta property="og:description" content="为了防止挂科，写了个脚本，可以将你的超星学习通里的作业数据、随堂练习导出成为 Csv 文件，方便导入 Anki 不停的复习错题。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/20211126-%E5%AD%A6%E4%B9%A0%E9%80%9A%E5%8A%A0Anki%E5%85%89%E9%80%9F%E9%80%83%E7%A6%BB%E6%8C%82%E7%A7%91/image-20211126172049922.png">
+<meta property="og:image" content="http://example.com/images/20211126-%E5%AD%A6%E4%B9%A0%E9%80%9A%E5%8A%A0Anki%E5%85%89%E9%80%9F%E9%80%83%E7%A6%BB%E6%8C%82%E7%A7%91/image-20211126170943239.png">
+<meta property="og:image" content="http://example.com/images/20211126-%E5%AD%A6%E4%B9%A0%E9%80%9A%E5%8A%A0Anki%E5%85%89%E9%80%9F%E9%80%83%E7%A6%BB%E6%8C%82%E7%A7%91/image-20211127122242076.png">
+<meta property="article:published_time" content="2023-08-31T14:00:13.972Z">
+<meta property="article:modified_time" content="2023-08-27T02:56:01.000Z">
+<meta property="article:author" content="小苹果牛角包">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/20211126-%E5%AD%A6%E4%B9%A0%E9%80%9A%E5%8A%A0Anki%E5%85%89%E9%80%9F%E9%80%83%E7%A6%BB%E6%8C%82%E7%A7%91/image-20211126172049922.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1693490476982">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1693490476982">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1693490476982">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1693490476983"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1559251606-c623743a6d76?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTN8fHBpbmt8ZW58MHx8fHwxNjYzMDQ0Nzc2&ixlib=rb-1.2.1&w=1920)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="小苹果牛角包" class="mdui-btn mdui-btn-icon"><img src="https://cravatar.cn/avatar/c7fd185f8c967dec20c29c75a40b9e09?s=400" alt="小苹果牛角包"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="小苹果牛角包">
+            <img src="https://cravatar.cn/avatar/c7fd185f8c967dec20c29c75a40b9e09?s=400" alt="小苹果牛角包" alt="小苹果牛角包">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>77</div>
+        <div><span>标签</span>9</div>
+        <div><span>分类</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/donate.html" title="给我赞助">
+            <i class="mdui-list-item-icon nexmoefont icon-coffee"></i>
+            <div class="mdui-list-item-content">
+                给我赞助
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" target="_blank" rel="noopener" href="https://i.nexmoe.com/" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+            </form>
+         
+    </div>
+</div>
+
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="https://nexmoe.com/3145B9F.html"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/20238211"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://github.com/nexmoe/"
+			target="_blank"
+			mdui-tooltip="{content: 'GitHub'}"
+			style="
+				color: rgb(25, 23, 23);
+				background-color: rgba(25, 23, 23, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-github"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://twitter.com/nexmoe"
+			target="_blank"
+			mdui-tooltip="{content: 'Twitter'}"
+			style="
+				color: rgb(59, 151, 239);
+				background-color: rgba(59, 151, 239, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-twitter"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://nexmoe.com/atom.xml"
+			target="_blank"
+			mdui-tooltip="{content: 'RSS'}"
+			style="
+				color: rgb(247, 132, 34);
+				background-color: rgba(247, 132, 34, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-rss"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2023 小苹果牛角包
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><a target="_blank" href="https://beian.miit.gov.cn/">鄂ICP备2020018486号</a>
+<br><a target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral">
+<img src="https://i.dawnlab.me/c0268c1e6cfd0863d6ba35be1575941a.png" width="150px"></a>
+
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://dogefs.s3.ladydaily.com/~/source/unsplash/photo-1559251606-c623743a6d76?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTN8fHBpbmt8ZW58MHx8fHwxNjYzMDQ0Nzc2&ixlib=rb-1.2.1&w=1920" alt="" loading="lazy">
+            <h1></h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年08月31日</a>
+        
+        
+    </div>
+    
+    
+    
+        <a class="zhihu" href="https://zhuanlan.zhihu.com/p/445784539" target="_blank">
+            <i class="nexmoefont icon-zhihu"></i>
+        </a>
+    
+    
+    
+</div>
+
+    <p>为了防止挂科，写了个脚本，可以将你的超星学习通里的作业数据、随堂练习导出成为 Csv 文件，方便导入 Anki 不停的复习错题。</p>
+<span id="more"></span>
+
+<p>以下是操作教程。</p>
+<h2 id="一-下载安装-Anki"><a href="#一-下载安装-Anki" class="headerlink" title="一 下载安装 Anki"></a>一 下载安装 Anki</h2><p><a target="_blank" rel="noopener" href="http://www.ankichina.net/resource/winAnki/">Anki让记忆更轻松 - ankichina</a></p>
+<h2 id="二-下载-Anki-选择题模板"><a href="#二-下载-Anki-选择题模板" class="headerlink" title="二 下载 Anki 选择题模板"></a>二 下载 Anki 选择题模板</h2><p><a target="_blank" rel="noopener" href="https://zhangsn.me/anki-awesome-select/">Anki选择题模板（单选+多选+自定义选项） | Half Stack (zhangsn.me)</a></p>
+<p>下载后双击即可导入模板</p>
+<h2 id="三-导出学习通作业、随堂练习数据"><a href="#三-导出学习通作业、随堂练习数据" class="headerlink" title="三 导出学习通作业、随堂练习数据"></a>三 导出学习通作业、随堂练习数据</h2><ol>
+<li><p>安装油猴或脚本猫</p>
+</li>
+<li><p>安装 “超星 To Csv” 脚本 <a target="_blank" rel="noopener" href="https://scriptcat.org/script-show-page/219">https://scriptcat.org/script-show-page/219</a></p>
+</li>
+<li><p>打开学习通作业或随堂练习页面，点击“下载题目数据”按钮</p>
+</li>
+</ol>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="/../../images/20211126-%E5%AD%A6%E4%B9%A0%E9%80%9A%E5%8A%A0Anki%E5%85%89%E9%80%9F%E9%80%83%E7%A6%BB%E6%8C%82%E7%A7%91/image-20211126172049922.png" alt="image-20211126172049922" data-caption="image-20211126172049922" loading="lazy"></p>
+<h2 id="四-将数据导入-Anki"><a href="#四-将数据导入-Anki" class="headerlink" title="四 将数据导入 Anki"></a>四 将数据导入 Anki</h2><p>1、打开 Anki，点击“文件”</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="/../../images/20211126-%E5%AD%A6%E4%B9%A0%E9%80%9A%E5%8A%A0Anki%E5%85%89%E9%80%9F%E9%80%83%E7%A6%BB%E6%8C%82%E7%A7%91/image-20211126170943239.png" alt="image-20211126170943239" data-caption="image-20211126170943239" loading="lazy"></p>
+<p>2、选择“导入”</p>
+<p>3、选择 步骤（三 3）下载的文件</p>
+<p>4、模板选择如图</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="/../../images/20211126-%E5%AD%A6%E4%B9%A0%E9%80%9A%E5%8A%A0Anki%E5%85%89%E9%80%9F%E9%80%83%E7%A6%BB%E6%8C%82%E7%A7%91/image-20211127122242076.png" alt="image-20211127122242076" data-caption="image-20211127122242076" loading="lazy"></p>
+<p>5、点击“导入”</p>
+
+    
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>小苹果牛角包<br>
+        <strong>本文链接：</strong><a href="http://example.com/2023/08/31/%E5%BC%80%E5%8F%91/20211126-%E5%AD%A6%E4%B9%A0%E9%80%9A%E5%8A%A0Anki%E5%85%89%E9%80%9F%E9%80%83%E7%A6%BB%E6%8C%82%E7%A7%91/" title="http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;08&#x2F;31&#x2F;%E5%BC%80%E5%8F%91&#x2F;20211126-%E5%AD%A6%E4%B9%A0%E9%80%9A%E5%8A%A0Anki%E5%85%89%E9%80%9F%E9%80%83%E7%A6%BB%E6%8C%82%E7%A7%91&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;08&#x2F;31&#x2F;%E5%BC%80%E5%8F%91&#x2F;20211126-%E5%AD%A6%E4%B9%A0%E9%80%9A%E5%8A%A0Anki%E5%85%89%E9%80%9F%E9%80%83%E7%A6%BB%E6%8C%82%E7%A7%91&#x2F;</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85-Anki"><span class="toc-number">1.</span> <span class="toc-text">一 下载安装 Anki</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E4%B8%8B%E8%BD%BD-Anki-%E9%80%89%E6%8B%A9%E9%A2%98%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.</span> <span class="toc-text">二 下载 Anki 选择题模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E5%AF%BC%E5%87%BA%E5%AD%A6%E4%B9%A0%E9%80%9A%E4%BD%9C%E4%B8%9A%E3%80%81%E9%9A%8F%E5%A0%82%E7%BB%83%E4%B9%A0%E6%95%B0%E6%8D%AE"><span class="toc-number">3.</span> <span class="toc-text">三 导出学习通作业、随堂练习数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B-%E5%B0%86%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5-Anki"><span class="toc-number">4.</span> <span class="toc-text">四 将数据导入 Anki</span></a></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2058306854838448" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
